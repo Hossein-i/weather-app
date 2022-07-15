@@ -1,0 +1,53 @@
+.timeframe {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: var(--bg-color-2);
+  border-radius: 1rem;
+
+  &.active {
+    background-color: var(--bg-color-3);
+    color: var(--text-color-2);
+  }
+  &__time {
+    font-size: 0.75rem;
+    opacity: 0.5;
+  }
+  &__icon {
+    font-size: 2rem;
+  }
+  &__wind {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+    font-size: 0.75rem;
+    opacity: 0.5;
+  }
+  &__up {
+    transform: rotate(0);
+  }
+  &__up-right {
+    transform: rotate(45deg);
+  }
+  &__up-left {
+    transform: rotate(-45deg);
+  }
+  &__down {
+    transform: rotate(180deg);
+  }
+  &__down-right {
+    transform: rotate(135deg);
+  }
+  &__down-left {
+    transform: rotate(-135deg);
+  }
+  &__right {
+    transform: rotate(90deg);
+  }
+  &__left {
+    transform: rotate(-90deg);
+  }
+}

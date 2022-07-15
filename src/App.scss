@@ -1,0 +1,85 @@
+@import "reset";
+
+:root {
+  --bg-color-1: #fff;
+  --bg-color-2: #eee;
+  --bg-color-3: #222;
+  --bg-color-4: #bbb;
+  --bg-color-5: #ffffff80;
+  --text-color-1: #000;
+  --text-color-2: #fff;
+}
+/******************/
+/**  Theme dark  **/
+/******************/
+[data-theme="dark"] {
+  --bg-color-1: #111;
+  --bg-color-2: #222;
+  --bg-color-3: #fff;
+  --bg-color-4: #fff;
+  --bg-color-5: #11111180;
+  --text-color-1: #fff;
+  --text-color-2: #000;
+}
+* {
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+}
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--bg-color-1);
+  color: var(--text-color-1);
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+h1,
+h2,
+h3,
+h4 {
+  font-weight: bold;
+}
+h1 {
+  font-size: 32px;
+  text-align: center;
+  padding: 1rem;
+}
+h2 {
+  font-size: 28px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 20px;
+}
+p {
+  font-size: 16px;
+}
+small {
+  font-size: 12px;
+}
+strong {
+  font-weight: bold;
+}
+
+/******************/
+/**  Animations  **/
+/******************/
+.animation-fade {
+  animation: fade 0.4s;
+}
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
