@@ -27,7 +27,11 @@ const computedWeatherData = (weatherData) => {
     let timeframes = [];
 
     weatherData.forecast.forecastday.forEach((forecast) => {
-      days.push({ ...forecast.day, date: forecast.date });
+      days.push({
+        ...forecast.day,
+        ...weatherData.location,
+        date: forecast.date,
+      });
       timeframes.push(...forecast.hour);
     });
 
