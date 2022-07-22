@@ -17,7 +17,10 @@ const SettingsContainer = () => {
         title="Settings"
         btnLeft={{
           icon: <MdNavigateBefore />,
-          onClick: () => window.history.back(),
+          onClick: () => {
+            window.history.back();
+            window.history.back();
+          },
         }}
       />
       <div>
