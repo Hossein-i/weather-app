@@ -15,9 +15,11 @@ const ManageCitiesContainer = () => {
   const [isError, setIsError] = useState(false);
 
   const handleOnChange = async (value) => {
-    if (isValid(value)) {
+    if (value.trim().length > 3) {
       const cityData = await fetchCity(value);
       setData([cityData]);
+    } else if (!isValid(value)) {
+      fetchCities();
     }
   };
 
@@ -61,7 +63,7 @@ const ManageCitiesContainer = () => {
           onClick: () => window.history.back(),
         }}
       />
-      <InputSearchComponent onChange={handleOnChange}/>
+      <InputSearchComponent onChange={handleOnChange} />
       {isLoading ? (
         <></>
       ) : (

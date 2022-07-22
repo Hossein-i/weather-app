@@ -29,35 +29,35 @@ const ItemComponent = ({ item }) => {
 
   return (
     <div className={`item ${currentCity === name && "active"}`}>
-      <div onClick={handleUpdateCity}>
-        <div className="item__city">{name}</div>
-        <div className="item__country">{country}</div>
-      </div>
-      <div onClick={handleUpdateCity}>
-        <div className="item__icon">{getWeatherIcon(code, is_day)}</div>
-        <div className="item__temp">
-          {(tempUnit === "°C" ? temp_c : temp_f).toFixed() + tempUnit}
+      <div className="item__wrapper" onClick={handleUpdateCity}>
+        <div>
+          <div className="item__city">{name}</div>
+          <div className="item__country">{country}</div>
+        </div>
+        <div>
+          <div className="item__icon">{getWeatherIcon(code, is_day)}</div>
+          <div className="item__temp">
+            {(tempUnit === "°C" ? temp_c : temp_f).toFixed() + tempUnit}
+          </div>
         </div>
       </div>
-      <div className="item__wrapper-btn">
-        {currentCity === name ? (
-          <button className="item__btn">
-            <MdCheck />
-          </button>
-        ) : (
-          <>
-            {listCities.includes(name) ? (
-              <button className="item__btn" onClick={handleRemoveCity}>
-                <MdClose />
-              </button>
-            ) : (
-              <button className="item__btn" onClick={handleAddCity}>
-                <MdAdd />
-              </button>
-            )}
-          </>
-        )}
-      </div>
+      {currentCity === name ? (
+        <button className="item__btn">
+          <MdCheck />
+        </button>
+      ) : (
+        <>
+          {listCities.includes(name) ? (
+            <button className="item__btn" onClick={handleRemoveCity}>
+              <MdClose />
+            </button>
+          ) : (
+            <button className="item__btn" onClick={handleAddCity}>
+              <MdAdd />
+            </button>
+          )}
+        </>
+      )}
     </div>
   );
 };

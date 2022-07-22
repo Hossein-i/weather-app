@@ -1,7 +1,7 @@
 .item {
-  padding: 1rem;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  padding-inline-end: 1rem;
+  display: flex;
+  justify-content: space-between;
   align-items: center;
   background-color: var(--bg-color-2);
   border-radius: 1rem;
@@ -9,6 +9,13 @@
   &.active {
     background-color: var(--bg-color-3);
     color: var(--text-color-2);
+  }
+  &__wrapper {
+    padding: 1rem;
+    flex: 1 1 auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
   }
   &__city {
     font-size: 1.25rem;
@@ -21,14 +28,8 @@
   }
   &__icon {
     font-size: 2rem;
-    text-align: center;
   }
   &__temp {
-    text-align: center;
-  }
-  &__wrapper-btn {
-    display: flex;
-    justify-content: flex-end;
   }
   &__btn {
     width: 3rem;
